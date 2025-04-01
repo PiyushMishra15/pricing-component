@@ -10,12 +10,12 @@ const pricingTiers = [
 ];
 
 export default function PricingCard() {
-  const [sliderValue, setSliderValue] = useState(2); // Default to 100K pageviews
+  const [sliderValue, setSliderValue] = useState(2);
   const [isYearly, setIsYearly] = useState(false);
   const maxValue = 4;
 
   const currentTier = pricingTiers[sliderValue];
-  const discount = 0.25; // 25% discount for yearly billing
+  const discount = 0.25;
   const finalPrice = isYearly
     ? currentTier.price * (1 - discount) * 12
     : currentTier.price;
@@ -43,10 +43,8 @@ export default function PricingCard() {
         </div>
       </div>
 
-      {/* Slider */}
       <div className="mb-10">
         <div className="relative">
-          {/* Range Slider */}
           <input
             type="range"
             value={sliderValue}
@@ -59,7 +57,6 @@ export default function PricingCard() {
             }}
           />
 
-          {/* Custom Thumb Styling */}
           <style jsx>{`
             input[type="range"]::-webkit-slider-thumb {
               -webkit-appearance: none;
@@ -95,7 +92,6 @@ export default function PricingCard() {
         </div>
       </div>
 
-      {/* Billing Toggle */}
       <div className="flex items-center justify-center my-6">
         <span className="text-sm text-gray-500 dark:text-gray-400">
           Monthly
@@ -125,7 +121,6 @@ export default function PricingCard() {
         </span>
       </div>
 
-      {/* Features */}
       <div className="flex justify-between ">
         <ul className="space-y-2 mb-6">
           {["Unlimited websites", "100% data ownership", "Email reports"].map(
@@ -141,7 +136,6 @@ export default function PricingCard() {
           )}
         </ul>
 
-        {/* Button */}
         <button className="w-35 mt-6 h-10 mr-8 bg-[#293356] hover:bg-[#10172a] text-white py-2 px-4 rounded-full transition-colors text-sm font-bold">
           Start my trial
         </button>
